@@ -75,6 +75,9 @@ function App() {
 				setIsUppercase(!isUpperCase);
 				return;
 			}
+			case 'NumLock': {
+				return;
+			}
 			case 'Enter': {
 				setBigText(text);
 				return;
