@@ -33,7 +33,7 @@ const row = [
 function App() {
 	let [text, setText] = useState('');
 	let [keyValue, setKeyValue] = useState(null);
-	// let [bigText, setBigText] = useState('');
+	let [bigText, setBigText] = useState('');
 	let [isUpperCase, setIsUppercase] = useState(false);
 
 	let renderedRow = isUpperCase ? row.join('').toUpperCase().split('') : row;
@@ -74,6 +74,10 @@ function App() {
 			}
 			case 'CapsLock': {
 				setIsUppercase(!isUpperCase);
+				return;
+			}
+			case 'Enter': {
+				setBigText(text);
 				return;
 			}
 			default: {
@@ -123,6 +127,9 @@ function App() {
 
 	return (
 		<View style={styles.container}>
+			<Text style={{ alignSelf: 'center', fontSize: 40, fontWeight: 'bold' }}>
+				{bigText}
+			</Text>
 			<View style={styles.textContainer}>
 				<Text style={styles.textStyle}> {text}</Text>
 			</View>
