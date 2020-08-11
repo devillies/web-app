@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { render } from '@testing-library/react';
 
 const row = [
 	'q',
@@ -108,7 +107,7 @@ function App() {
 			document.removeEventListener('keydown', _keyDown);
 			document.removeEventListener('keyup', _keyUp);
 		};
-	}, [text]);
+	}, [text, isUpperCase]);
 	const _renderKey = (key) => {
 		let isTouched = String(keyValue).toLowerCase() === key;
 
@@ -155,7 +154,7 @@ const styles = StyleSheet.create({
 	},
 
 	textColor: {
-		color: '#fff',
+		color: '#ffff',
 	},
 	keyboardStyle: {
 		// flex: 1,
@@ -167,7 +166,7 @@ const styles = StyleSheet.create({
 	},
 	keyStyle: {
 		borderWidth: 1,
-		height: 35,
+		height: 40,
 		width: 60,
 		margin: 1,
 		alignItems: 'center',
